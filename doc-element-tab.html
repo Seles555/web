@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/slick/slick.css">
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <!-- icon css-->
+    <link rel="stylesheet" href="assets/elagent-icon/style.css">
+    <link rel="stylesheet" href="assets/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/niceselectpicker/nice-select.css">
+    <link rel="stylesheet" href="assets/animation/animate.css">
+    <link rel="stylesheet" href="assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/prism/prism.css">
+    <link rel="stylesheet" href="assets/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="stylesheet" href="css/doc.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>Docy</title>
+</head>
+
+<body class="doc wide-container" data-spy="scroll" data-target="#navbar-example3" data-scroll-animation="true">
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="round_spinner">
+                <div class="spinner"></div>
+                <div class="text">
+                    <img src="data:image/jpeg;base64,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"
+                     alt="">
+                    <h4 style="color:darkviolet"><span>Doc</span>y</h4>
+                </div>
+            </div>
+            <h2 class="head">Did You Know?</h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="body_wrapper">
+        <nav class="navbar navbar-expand-lg menu_one dark_menu display_none sticky-nav">
+            <img src="C:\Users\user8\Desktop\project s2\Docy_HTML_Template\img\typography\leaf_left.png">
+            <div class="container custom_container">
+                <a class="navbar-brand header_logo" href="index.html">
+                    <img class="first_logo sticky_logo main_logo" height="120px"src="C:\Users\user8\Downloads\AdobeStock_135306642 [Converted]h.png" srcset="img/logo-2x.png 2x" alt="logo">
+                    <img class="white_logo"src="C:\Users\user8\Downloads\AdobeStock_135306642 [Converted]h.png" srcset="img/logo-w2x.png 2x" alt="logo">
+                </a>
+                <div class="search-input">
+                    <ion-icon class="search-icon" name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search..." value="" class="">
+                </div>
+                <div class="mobile-dark-mode d-lg-none">
+                    <label for="something" class="tab-btn tab-btns">
+                        <ion-icon class="light-mode" name="contrast"></ion-icon>
+                    </label>
+                    <label for="something" class="tab-btn">
+                        <ion-icon class="dark-mode" name="contrast-outline"></ion-icon>
+                    </label>
+                </div>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menu_toggle">
+                    <span class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="hamburger-cross">
+                        <span></span>
+                        <span></span>
+                    </span>
+                </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a href="index.html" class="nav-link dropdown-toggle">Home</a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="index.html" class="nav-link">Creative Helpdesk</a></li>
+                                <li class="nav-item"><a href="index-multi.html" class="nav-link">Multi Helpdesk</a></li>
+                                <li class="nav-item"><a href="index-classic.html" class="nav-link">Classic Helpdesk</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu mega_menu tab-demo active">
+                            <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Headings</a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="true" data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-5 tabHeader">
+                                            <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="v-pills-doc-tab" data-toggle="pill" href="#v-pills-doc" role="tab" aria-controls="v-pills-doc" aria-selected="true">Chapters</a>
+                                                </li>
+                                                <li class="nav-item active">
+                                                    <a class="nav-link" id="v-pills-code-tab" data-toggle="pill" href="#v-pills-code" role="tab" aria-controls="v-pills-code" aria-selected="false">HTML</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="v-pills-layout-tab" data-toggle="pill" href="#v-pills-layout" role="tab" aria-controls="v-pills-layout" aria-selected="false">CSS</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="v-pills-tour-tab" data-toggle="pill" href="#v-pills-tour" role="tab" aria-controls="v-pills-tour" aria-selected="false">JAVASCRIPT</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="v-pills-content-tab" data-toggle="pill" href="#v-pills-content" role="tab" aria-controls="v-pills-content" aria-selected="false">NODE.JS</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="v-pills-pages-tab" data-toggle="pill" href="#v-pills-pages" role="tab" aria-controls="v-pills-pages" aria-selected="false">REACT.JS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="tab-content tabContent" id="v-pills-tabContent">
+                                                <div class="tab-pane fade" id="v-pills-doc" role="tabpanel" aria-labelledby="v-pills-doc-tab">
+                                                    <div class="d-flex">
+                                                        <ul class="list-unstyled tab_list">
+                                                            <li> <a href="doc-main.html"> Doc Topics </a> </li>
+                                                            <li> <a href="archive-doc-single.html"> Single Product </a> </li>
+                                                            <li> <a href="archive-doc-multi.html"> Multi Products </a> </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text">
+                                                        <a href="doc-main.html">
+                                                            <p>More Categories</p>
+                                                        </a>
+                                                        <a href="doc-main.html">
+                                                            <p>All docs</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade active show" id="v-pills-code" role="tabpanel" aria-labelledby="v-pills-code-tab">
+                                                    <div class="d-flex">
+                                                        <ul class="list-unstyled tab_list">
+                                                            <li><a class="active" href="doc-element-tab.html">Introduction to HTML</a></li>
+                                                            <li><a href="doc-element-accordion.html">HTML Structures</a></li>
+                                                            <li><a href="doc-element-notice.html">HTML Tags and Elements</a></li>
+                                                            <li><a href="doc-content-tables.html">HTML Attributes</a></li>
+                                                        </ul>
+                                                        <ul class="list-unstyled tab_list">
+                                                            <li><a href="doc-element-hotspots.html">HTML Lists</a></li>
+                                                            <li><a href="doc-element-code.html">HTML Links</a></li>
+                                                            <li><a href="doc-element-lightbox.html">Images and Medias</a></li>
+                                                            <li><a href="doc-ref-cheatsheet.html">HTML,CSS and JAVACRIPST</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text">
+                                                        <a href="#">
+                                                            <p>More Categories</p>
+                                                        </a>
+                                                        <a href="doc-main.html">
+                                                            <p>All docs</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-layout" role="tabpanel" aria-labelledby="v-pills-layout-tab">
+                                                    <div class="d-flex">
+                                                        <ul class="list-unstyled tab_list">
+                                                            <li><a href="doc-content-image.html">Introduction to CSS</a></li>
+                                            <li><a href="doc-element-tab.html">Selectors and Properties</a></li>
+                                            <li><a href="doc-element-code.html">Box Model</a></li>
+                                            <li><a href="doc-content-video.html">Display and Visibility</a></li>
+                                            <li><a href="doc-content-tooltip.html">Positioning and Floating</a></li>
+                                            <li><a href="typography.html">Grid Layout</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text">
+                                                        <a href="#">
+                                                            <p>More Categories</p>
+                                                        </a>
+                                                        <a href="#">
+                                                            <p>All docs</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-tour" role="tabpanel" aria-labelledby="v-pills-tour-tab">
+                                                    <div class="d-flex">
+                                                        <ul class="list-unstyled tab_list w_100">
+                                                            <li><a href="doc-ref-cheatsheet.html">Cheatsheet</a></li>
+                                                            <li><a href="doc-ref-footnote.html">Footnotes</a></li>
+                                                            <li><a href="doc-tour.html">Interface Tour</a></li>
+                                                            <li><a href="doc-ref-can-use.html">Can I Use</a></li>
+                                                            <li><a href="doc-content-tooltip.html">Tooltips & Direction</a></li>
+                                                            <li><a href="doc-ref-shortcuts.html">Keyboard Shortcuts</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text">
+                                                        <a href="#">
+                                                            <p>More Categories</p>
+                                                        </a>
+                                                        <a href="#">
+                                                            <p>All docs</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-content" role="tabpanel" aria-labelledby="v-pills-content-tab">
+                                                    <div class="d-flex">
+                                                        <ul class="list-unstyled tab_list">
+                                                            <li><a href="doc-content-image.html">Image</a></li>
+                                                            <li><a class="active" href="doc-content-tables.html">Tables</a></li>
+                                                            <li><a href="doc-content-video.html">Video</a></li>
+                                                            <li><a href="typography.html">Typography</a></li>
+                                                            <li><a href="doc-content-tooltip.html">Tooltips & Direction</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text">
+                                                        <a href="#">
+                                                            <p>More Categories</p>
+                                                        </a>
+                                                        <a href="#">
+                                                            <p>All docs</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-pages" role="tabpanel" aria-labelledby="v-pills-pages-tab">
+                                                    <div class="d-flex">
+                                                        <ul class="list-unstyled tab_list">
+                                                            <li> <a href="onepage.html">Onepage</a> </li>
+                                                            <li> <a href="doc-main.html">Doc Topics</a></li>
+                                                            <li> <a href="doc-tour.html">Cheatsheet</a> </li>
+                                                            <li> <a href="doc-changelog.html">Changelog</a> </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text">
+                                                        <a href="#">
+                                                            <p>More Categories</p>
+                                                        </a>
+                                                        <a href="doc-main.html">
+                                                            <p>All docs</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pages
+                            </a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="onepage.html" class="nav-link">Onepage Doc</a></li>
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                                <li class="nav-item"><a href="forums.html" class="nav-link">Forum</a></li>
+                                <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
+                                <li class="nav-item"><a href="404-error.html" class="nav-link">404 Error</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="forums.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Forum
+                            </a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false"
+                               data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="forums.html" class="nav-link">Forums Root</a></li>
+                                <li class="nav-item"><a href="forum-topics.html" class="nav-link">Forum Topics</a></li>
+                                <li class="nav-item"><a href="forum-single.html" class="nav-link">Topic Details</a></li>
+                                <li class="nav-item"><a href="forum-profile.html" class="nav-link">User Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Blog
+                            </a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="blog-grid.html" class="nav-link">Extended Grid</a></li>
+                                <li class="nav-item"><a href="blog-grid-two.html" class="nav-link">Grid with Sidebar</a></li>
+                                <li class="nav-item"><a href="blog-list.html" class="nav-link">List with Sidebar</a></li>
+                                <li class="nav-item"><a href="blog-single.html" class="nav-link">Post Details</a></li>
+                                <li class="nav-item"><a href="blog-single2.html" class="nav-link">Post Details Two</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="right-nav">
+                        <a class="nav_btn tp_btn" href="https://is.gd/nDvqm2" target="_blank">Get Docy</a>
+                        <a class="px-2 ml-3" href="#" title="Subscribe to the newsletter">
+                            <ion-icon name="mail"></ion-icon>
+                        </a>
+                        <a class="px-2" href="#" title="RSS feed">
+                            <ion-icon name="logo-rss"></ion-icon>
+                        </a>
+                        <div class="px-2 js-darkmode-btn" title="Toggle dark mode">
+                            <label for="something" class="tab-btn tab-btns">
+                                <ion-icon class="light-mode" name="contrast"></ion-icon>
+                            </label>
+                            <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
+                            <label for="something" class="tab-btn">
+                                <ion-icon class="dark-mode" name="contrast-outline"></ion-icon>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile_main_menu dark_menu sticky-nav ">
+            <div class="container">
+                <div class="mobile_menu_left">
+                    <button type="button" class="navbar-toggler mobile_menu_btn">
+                    <span class="menu_toggle ">
+                        <span class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
+                    </button>
+                    <a class="navbar-brand header_logo" href="index.html">
+                        <img class="sticky_logo main_logo" src="C:\Users\user8\Desktop\project monica\Docy_HTML_Template\img\typography\leaf_left.png" srcset="img/logo-2x.png 2x" alt="logo">
+                        <img class="white_logo" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
+                    </a>
+                </div>
+                <div class="mobile_menu_right">
+                    <div class="right-nav">
+                        <a class="nav_btn tp_btn" href="https://is.gd/nDvqm2" target="_blank">Get Docy</a>
+                        <a class="px-2 ml-3" href="#" title="Subscribe to the newsletter">
+                            <ion-icon name="mail"></ion-icon>
+                        </a>
+                        <a class="px-2" href="#" title="RSS feed">
+                            <ion-icon name="logo-rss"></ion-icon>
+                        </a>
+                        <div class="px-2 js-darkmode-btn btn" title="Toggle dark mode">
+                            <label for="something2" class="tab-btn tab-btns">
+                                <ion-icon class="light-mode" name="contrast"></ion-icon>
+                            </label>
+                            <input type="checkbox" name="something2" id="something2" class="dark_mode_switcher">
+                            <label for="something2" class="tab-btn">
+                                <ion-icon class="dark-mode" name="contrast-outline"></ion-icon>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="click_capture"></div>
+        <div class="side_menu">
+            <div class="mobile_menu_header">
+                <div class="close_nav">
+                    <i class="arrow_left"></i>
+                    <i class="icon_close"></i>
+                </div>
+                <div class="mobile_logo">
+                    <a class="navbar-brand header_logo" href="index.html">
+                        <img class="sticky_logo main_logo" src="C:\Users\user8\Desktop\project monica\Docy_HTML_Template\img\typography\leaf_left.png" srcset="img/logo-2x.png 2x" alt="logo">
+                        <img class="white_logo" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="mobile_nav_wrapper">
+                <nav class="mobile_nav_top">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item dropdown submenu active">
+                            <a href="#" class="nav-link">Headings</a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="doc-content-video.html" class="nav-link">Chapters</a></li>
+                                <li class="nav-item"><a href="doc-main.html" class="nav-link">DocTopics</a></li>
+                                <li class="nav-item dropdown submenu">
+                                    <a href="#" class="nav-link">Elements</a>
+                                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="doc-element-tab.html" class="active nav-link">Tabs</a></li>
+                                        <li class="nav-item"><a href="doc-element-accordion.html" class="nav-link">Accordion</a></li>
+                                        <li class="nav-item active"><a href="doc-element-notice.html" class="nav-link">Notices</a></li>
+                                        <li class="nav-item"><a href="doc-content-tables.html" class="nav-link">Tables</a></li>
+                                        <li class="nav-item"><a href="doc-content-tooltip.html" class="nav-link">Tooltips & Direction</a></li>
+                                        <li class="nav-item"><a href="doc-element-hotspots.html" class="nav-link">Image Hotspots</a></li>
+                                        <li class="nav-item"><a href="doc-element-lightbox.html" class="nav-link">Lightbox</a></li>
+                                        <li class="nav-item"><a href="doc-changelog.html" class="nav-link">Changelog</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown submenu">
+                                    <a href="#" class="nav-link">Layouts</a>
+                                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="doc-element-hotspots.html" class="nav-link">Left Sidebar</a></li>
+                                        <li class="nav-item"><a href="doc-content-video.html" class="nav-link">Full-width</a></li>
+                                        <li class="nav-item"><a href="doc-layout-banner-gradient.html" class="nav-link">Gradient Banner</a></li>
+                                        <li class="nav-item"><a href="doc-layout-banner-empty.html" class="nav-link">Without Banner</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="#" class="nav-link">Pages</a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="onepage.html" class="nav-link">Onepage Doc</a></li>
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                                <li class="nav-item"><a href="onepage.html" class="nav-link">Onepage Doc</a></li>
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                                <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
+                                <li class="nav-item"><a href="404-error.html" class="nav-link">404 Error</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="#" class="nav-link">Forum</a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="forums.html" class="nav-link">Forums Root</a></li>
+                                <li class="nav-item"><a href="forum-topics.html" class="nav-link">Forum Topics</a></li>
+                                <li class="nav-item"><a href="forum-single.html" class="nav-link">Topic Details</a></li>
+                                <li class="nav-item"><a href="forum-profile.html" class="nav-link">User Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link" href="#"> Blog </a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="blog-grid.html" class="nav-link">Extended Grid</a></li>
+                                <li class="nav-item"><a href="blog-grid-two.html" class="nav-link">Grid with Sidebar</a></li>
+                                <li class="nav-item"><a href="blog-list.html" class="nav-link">List with Sidebar</a></li>
+                                <li class="nav-item"><a href="blog-single.html" class="nav-link">Post Details</a></li>
+                                <li class="nav-item"><a href="blog-single2.html" class="nav-link">Post Details Two</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile_nav_bottom">
+                    <aside class="doc_left_sidebarlist">
+                        <h2>Docy Documentation</h2>
+                        <div class="scroll">
+                            <ul class="list-unstyled nav-sidebar">
+                                <li class="nav-item">
+                                    <a href="doc-main.html" class="nav-link"><img src="img/side-nav/home.png" alt="">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="doc-element-tab.html" class="nav-link"><img src="img/side-nav/briefcase.png" alt="briefcase">Elements</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a class="active" href="doc-element-tab.html">Tabs</a></li>
+                                        <li><a href="doc-element-accordion.html">Accordion</a></li>
+                                        <li><a href="doc-element-notice.html">Notices</a></li>
+                                        <li><a href="doc-content-tables.html">Table</a></li>
+                                        <li><a class="active" href="doc-element-lightbox.html">Image Lightbox</a></li>
+                                        <li><a href="doc-element-hotspots.html">Image Hotspots</a></li>
+                                        <li><a href="doc-element-code.html">Source Code</a></li>
+                                        <li><a href="doc-content-tooltip.html">Tooltip</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="doc-content-video.html" class="nav-link"><img src="img/side-nav/layout.png" alt="">Layouts</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="doc-content-video.html">Full-width</a></li>
+                                        <li><a href="doc-element-hotspots.html">Left Sidebar</a></li>
+                                        <li><a href="doc-layout-banner-gradient.html">Gradient Banner</a></li>
+                                        <li><a href="doc-layout-banner-empty.html">Without Banner</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="doc-ref-cheatsheet.html" class="nav-link"><img src="img/side-nav/chat1.png" alt="">Reference</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="doc-ref-cheatsheet.html">Cheatsheet</a></li>
+                                        <li><a href="doc-ref-footnote.html">Footnotes</a></li>
+                                        <li><a href="doc-tour.html">Interface Tour</a></li>
+                                        <li><a href="doc-ref-can-use.html">Can I Use</a></li>
+                                        <li><a href="doc-content-tooltip.html">Tooltips & Direction</a></li>
+                                        <li><a href="doc-ref-shortcuts.html">Keyboard Shortcuts</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="doc-content-image.html" class="nav-link"><img src="img/side-nav/document.png" alt="">Content</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="doc-content-image.html">Image</a></li>
+                                        <li><a class="active" href="doc-content-tables.html">Tables</a></li>
+                                        <li><a href="doc-content-tooltip.html">Tooltips & Direction</a></li>
+                                        <li><a href="doc-element-code.html">Code</a></li>
+                                        <li><a href="doc-content-video.html">Video</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="doc-changelog.html" class="nav-link"><img src="img/side-nav/clock.png" alt="">Change Log</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled nav-sidebar coding_nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><img src="img/side-nav/account.png" alt="">Account</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="onepage.html" class="nav-link"><img src="img/side-nav/layout.png" alt="">Onepage Doc</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled nav-sidebar bottom_nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><img src="img/side-nav/united-states.png" alt="">United States</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="signup.html" class="nav-link"><img src="img/side-nav/edit.png" alt="">Signup</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="signin.html" class="nav-link"><img src="img/side-nav/users.png" alt="">Sign In <i class="arrow_right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <!--================Forum Breadcrumb Area =================-->
+        <section class="doc_banner_area search-banner-light" id="cat">
+            <div class="container">
+                <div class="doc_banner_content">
+                    <form action="#" class="header_search_form">
+                        <div class="header_search_form_info">
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <p id="mac">EASY LEARNING</p>
+                                    <h1 id="cozy">HTML Tutorial</h1>
+                                    <div class="header_search_form_panel">
+                                        <ul class="list-unstyled">
+                                            <li>Help Desk
+                                                <ul class="list-unstyled search_item">
+                                                    <li><span>Configuration</span><a href="#">How to edit host and
+                                                            port?</a></li>
+                                                    <li><span>Configuration</span><a href="#">The dev Property</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>Support
+                                                <ul class="list-unstyled search_item">
+                                                    <li><span>Pages</span><a href="#">The asyncData Method</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>Documentation
+                                                <ul class="list-unstyled search_item">
+                                                    <li><span>Getting Started</span><a href="#">The asyncData Method</a>
+                                                    </li>
+                                                    <li><span>Getting Started</span><a href="#">The asyncData Method</a>
+                                                    </li>
+                                                    <li><span>Getting Started</span><a href="#">The asyncData Method</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header_search_keyword">
+                         <h6>Easy has the nice typography settings by default,if needed you can customize any of the elements font you can see in this page really easily from the theme options</h6>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="page_breadcrumb">
+            <div class="container custom_container">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Chapter1</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Introduction to HTML</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-sm-5">
+                        <a href="#" class="date"><i class="icon_clock_alt"></i>Updated on March 03, 2020</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Forum Breadcrumb Area =================-->
+
+        <!--================Topic Area =================-->
+        <section class="doc_documentation_area" id="sticky_doc">
+            <div class="overlay_bg"></div>
+            <div class="container custom_container">
+                <div class="row">
+                    <div class="col-lg-3 doc_mobile_menu display_none">
+                        <aside class="doc_left_sidebarlist">
+                            <div class="open_icon" id="left">
+                                <i class="arrow_carrot-right"></i>
+                                <i class="arrow_carrot-left"></i>
+                            </div>
+                            <div class="scroll">
+                                <ul class="list-unstyled nav-sidebar">
+                                    <li class="nav-item">
+                                        <a href="doc-main.html" class="nav-link"><img src="img/side-nav/home.png" alt="">Home</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="doc-main.html" class="nav-link"><img src="data:image/png;base64,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" height="20px" width="35px" alt="briefcase">HTML</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a class="active" href="doc-element-tab.html">Introduction to HTML</a></li>
+                                            <li><a href="doc-element-accordion.html">HTML Tables</a></li>
+                                            <li><a href="doc-content-tooltip.html">HTML Tags and Elements</a></li>
+                                            <li><a href="doc-element-notice.html">HTML Attributes</a></li>
+                                            <li><a href="doc-content-tables.html">HTML Lists</a></li>
+                                            <li><a href="doc-element-lightbox.html">HTML Links</a></li>
+                                            <li><a href="doc-element-hotspots.html">HTML Images and Media</a></li>
+                                            <li><a href="doc-element-code.html">HTML Forms</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="typography.html" class="nav-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTAi6Ah3SwQOrGOrMCj_yF6SgNR_wgM8rJlw&usqp=CAU" height="20px" width="35px" alt="">CSS</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="doc-content-image.html">Introduction to CSS</a></li>
+                                            <li><a href="doc-element-tab.html">Selectors and Properties</a></li>
+                                            <li><a href="doc-element-code.html">Box Model</a></li>
+                                            <li><a href="doc-content-video.html">Display and Visibility</a></li>
+                                            <li><a href="doc-content-tooltip.html">Positioning and Floating</a></li>
+                                            <li><a href="typography.html">Grid Layout</a></li>
+                                            <li><a href="typography.html">Text and Fonts</a></li>
+                                            <li><a href="typography.html">Backgrounds and Borders</a></li>
+                                            <li><a href="typography.html">Flexbox</a></li>
+                                            <li><a href="typography.html">CSS Variables</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="doc-ref-cheatsheet.html" class="nav-link"><img src="data:image/png;base64,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" height="20px" width="35px" alt="">JAVASCRIPT</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="doc-ref-cheatsheet.html">Intoduction to JavaScript</a></li>
+                                            <li><a href="doc-ref-footnote.html">Variables and Data Types</a></li>
+                                            <li><a href="doc-tour.html">Operators and Expressions</a></li>
+                                            <li><a href="doc-ref-can-use.html">Control Flow</a></li>
+                                            <li><a href="doc-content-tooltip.html">Functions</a></li>
+                                            <li><a href="doc-ref-shortcuts.html">Arrays</a></li>
+                                            <li><a href="doc-ref-shortcuts.html">Objects</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="doc-content-video.html" class="nav-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGgXjuqG9BKVB_j1e3-nrYR4ZbgUrc3e1MWw&usqp=CAU" height="30px" width="35px" alt="">NODE.JS</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="doc-content-video.html">Introduction to Node.js</a></li>
+                                            <li><a href="doc-element-hotspots.html">Left Sidebar</a></li>
+                                            <li><a href="doc-layout-banner-gradient.html">Gradient Banner</a></li>
+                                            <li><a href="doc-layout-banner-empty.html">Without Banner</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="doc-changelog.html" class="nav-link"><img src="img/side-nav/clock.png" alt="">Change Log</a>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled nav-sidebar coding_nav">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><img src="img/side-nav/account.png" alt="">Account</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="doc-element-code.html" class="nav-link"><img src="img/side-nav/coding.png" alt="">Development</a>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled nav-sidebar bottom_nav">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><img src="img/side-nav/united-states.png" alt="">United States</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><img src="img/side-nav/edit.png" alt="">English </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><img src="img/side-nav/users.png" alt="">Sign In <i class="arrow_right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-lg-7 col-md-8 doc-middle-content">
+                        <div id="post" class="shortcode_info">
+                            <div class="shortcode_title">
+                                <a class="btn" href="#">HTML</a>
+                                <h1 style="color:blue">Introduction to HTML</h1>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAANe_qSkabHH5RzolrTuohkmwpUr7ztKmKg&usqp=CAU">
+                                <p>Welcome to HTML! Get familiar with the Stripe products and explore their features, guides, tips and tools.</p>
+                            </div>
+                            <div class="toggle_shortcode">
+                                <div class="shortcode_title">
+                                    <h4 style="color:darkviolet">What is HTML ?</h4>
+                                    <p>HTML (Hypertext Markup Language) is a standard markup language used to create web pages. It provides a means to describe the structure and layout of a document, including headings, paragraphs, images, and links. HTML is used in conjunction with other technologies such as CSS and JavaScript to create dynamic and interactive web pages.</p>
+                                </div>
+                                <div class="collaps_tabs">
+                                <div class="collaps_tab_inner">
+                                    <div class="shortcode_title">
+                                        <h4 style="color:darkviolet">The History of HTML</h4>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRPM1SI5E30UFpdG3DYFB_mTkufcagaPi7lA&usqp=CAU">
+                                        <p>HTML was first developed in the late 1980s by Tim Berners-Lee, a British computer scientist who was working at CERN (the European Organization for Nuclear Research) in Switzerland. Berners-Lee created HTML as a way to structure and share scientific documents over the internet. He also developed the first web browser, called WorldWideWeb (later renamed to Nexus) and the first web server, called CERN httpd.<br></p>
+                                           <p> The first version of HTML, HTML 1.0, was released in 1991. It was a very basic markup language, and only had a handful of tags such as &lt;p&gt; for paragraphs and &lt;a&gt; for links. In 1995, HTML 2.0 was released which added support for tables, images, and forms.<br></p>
+
+                                           <p> HTML 3.2 was released in 1997, which added support for more advanced features such as style sheets, scripting, and multimedia. HTML 4.0 was released in 1998, which added even more features such as support for internationalisation and accessibility.<br></p>
+
+                                            <p>HTML5, the current version of HTML, was first released in 2008. It introduced many new features such as semantic elements, multimedia support, and offline storage. HTML5 also introduced a simpler, more flexible syntax, and made it easier to create web applications.
+                                            HTML is continuously being developed by W3C and WHATWG, adding new tags and functionalities, currently it's on HTML 5.2 and HTML5.3 is under development.
+                                            </p>
+                                    </div>
+                                    <div class="shortcode_title">
+                                        <h4 style="color:darkviolet">The Purpose of HTML</h4>
+                                        <p>The primary purpose of HTML is to provide a way to create structured, well-formed documents that can be displayed in web browsers. HTML allows developers to create headings, paragraphs, lists, images, links, and other types of content that can be rendered by a browser to create a webpage.</p>
+                                           <p> HTML is used to describe the structure of a webpage, not its presentation or style. For this purpose developers use CSS (Cascading Style Sheets) which is a language used to describe the presentation of an HTML document.</p>
+                                           <p> HTML also enables creating forms, which allows users to interact with a website by submitting data. This data can then be processed by the server-side script or JavaScript and displayed on the webpage.</p>
+                                           <p>Additionally, HTML can be used to create interactive elements and dynamic content with the help of JavaScript, which is a programming language that allows developers to create complex interactions and animations on a webpage.</p>
+<p>In summary, HTML provides a way for developers to create the structure and content of a webpage, CSS provides a way to control the presentation of the webpage, and JavaScript provides a way to make the webpage interactive and dynamic.</p>
+                                            
+                                            </p>
+                                            <div class="shortcode_title">
+                                                <h4 style="color:darkviolet">How does HTML work?</h4>
+                                                <p>HTML works by using a set of predefined tags, which are enclosed in angle brackets (&lt; &gt;). These tags are used to describe the structure and layout of a document, and provide information to the web browser about how to display the content.</p>
+                                                   <p> When a web browser receives an HTML document, it reads the document and interprets the tags to determine how the content should be rendered on the screen.</p>
+                                                    <p>For example, a &lt;p&gt; tag indicates that the text inside the tag should be displayed as a paragraph, while an &lt;img&gt; tag tells the browser to display an image. A &lt;a&gt; tag indicates a link to another webpage, and the browser will display the linked text as a hyperlink.</p>
+                                                    <p>The browser reads the HTML document from top to bottom and applies the rules defined by the tags to render the page.</p>
+                                                   <p> In addition to the standard HTML tags, developers can also create custom tags, called "custom elements", which can be used to create reusable components that can be easily embedded in different pages.</p>
+                                                    <p>HTML documents are typically stored as plain text files with the .html or .htm file extension, and are served by a web server to a web browser when a user requests the webpage. The web browser then reads the HTML code and renders the webpage accordingly.</p>
+                                                    <p>The final result should be a webpage that is correctly structured, easy to understand and visually appealing for the user to interact with.
+                                                    </p>
+
+                                                <div class="shortcode_title">
+                                                    <h4 style="color:darkviolet">HTML Versions and Standards</h4>
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxwNuBHPhb1htxUeMsUHQD5V-lgboFk4e3PQ&usqp=CAU">
+                                                    <p>HTML has gone through several versions since its initial release in 1991, with each version introducing new features and capabilities. The most recent version is HTML5, which was first released in 2008. The following is a brief overview of the main versions of HTML:</li>
+                                                        
+                                                       <ul id="mat">
+                                                        <li>	<b>HTML 1.0:</b> The first version of HTML, released in 1991. It was a very basic markup language, and only had a handful of tags such as &lt;p&gt; for paragraphs and &lt;a&gt; for links.<br>
+                                                        <li>	<b>HTML 2.0:</b> Released in 1995, it added support for tables, images, and forms.<br></li>
+                                                        <li>	<b>HTML 3.2:</b> Released in 1997, it added support for more advanced features such as style sheets, scripting, and multimedia.<br></li>
+                                                        <li>	<b>HTML 4.0: </b>Released in 1998, it added even more features such as support for internationalization and accessibility.<br></li>
+                                                        <li>	<b>HTML5:</b> The current version of HTML, first released in 2008. It introduced many new features such as semantic elements, multimedia support, and offline storage. HTML5 also introduced a simpler, more flexible syntax and made it easier to create web applications.</li></p>
+                                                        </ul>
+                                                        <p>HTML standards are set by the World Wide Web Consortium (W3C) and are periodically updated to reflect the latest developments in web technology. The W3C is an international organization that sets standards for the web, and their recommendations are widely followed by web developers.
+                                                        It's worth mentioning that there's also an ongoing development of HTML by WHATWG (Web Hypertext Application Technology Working Group), which is an organization that focuses on the development of the web platform.
+                                                        It's important for web developers to keep in mind that not all browsers support the latest version of HTML, so it's important to ensure that the code is compatible with older browsers.
+                                                       
+                                                    </p>
+                                                        <div class="shortcode_title">
+                                                            <h4 style="color:darkviolet">Basic HTML Document Structure</h4>
+                                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTq55aPVnmagqpQSsctCaJrznYXTUuJ7VGQ&usqp=CAU">
+                                                        <p>Basic HTML Document Structure:
+
+                                                            A basic HTML document has a specific structure that must be followed in order for the document to be properly rendered by a web browser. Here is an example of a basic HTML document structure:
+                                                            
+                                                            <div class="editor-container">
+                                                                <div id="editor">
+                                                                <pre>
+                                                                    <code class="language-html" data-lang="html" >
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;My Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to my webpage&lt;/h1&gt;
+&lt;p&gt;This is a simple webpage created using HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                                                    </code>
+                                                                </pre>
+                                                                <button type="button" class="btn btn-primary"><a href="live-web-editor/index.html">Try it</a></button>
+
+                                                            </div>
+                                                            </div>
+                                
+                                                           <ul id="mat">
+                                                            
+                                                            	<li>The &lt;!DOCTYPE&gt; declaration is used to specify the version of HTML being used. In this case, the &lt;!DOCTYPE html&gt; declaration is used to specify that the document is written in HTML5.</li>
+                                                                <li> The &lt;html&gt; element is the root element of the document and contains all other elements.</li>
+                                                            	<li>The &lt;head&gt; element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.</li>
+                                                                <li>The &lt;title&gt; element specifies the title of the document, which is displayed in the browser's title bar or tab.</li>
+                                                            	<li>The &lt;body&gt; element contains the content of the document, such as headings, paragraphs, images, and links.</li>
+                                                        	    <li>The &lt;h1&gt; element is used to create a heading, in this case the title of the webpage.</li>
+                                                            	<li>The &lt;p&gt; element is used to create a paragraph.</li>
+                                                                </ul>
+                                                        	<p>The closing tags are optional for some HTML tags, but it's a good practice to always close them.
+                                                            This is a basic example and you can add many more tags and attributes to the structure to have a complex webpage, but this is the basic structure that all HTML documents must follow.
+                                                            It's also important to note that HTML5 introduced new semantic tags like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, among others, that give more meaning to the structure of the webpage, making it more accessible and search engine friendly.
+                                                            <h4>The DOCTYPE Declaration</h4>
+                                                            <p>The DOCTYPE declaration is an instruction that tells the web browser which version of HTML or
+                                                                XML the page is written in. It is the first line of code in an HTML or XML document, and it is
+                                                                required for the document to be properly rendered by the browser.</p>
+                                                                <p>The DOCTYPE declaration starts with the characters &lt;!DOCTYPE, followed by the name of the
+                                                                document type definition (DTD) and then the name of the root element of the document, for
+                                                                example</p>
+                                                                <pre>
+                                                                    <code class="language-html" gata-lang="html">
+                                                                        &lt;!DOCTYPE html&gt;
+                                                                    </code>
+                                                                </pre>
+                                                                <p>This is the DOCTYPE declaration for an HTML5 document. It tells the browser that the document
+                                                                    is written in HTML5, which is the most recent version of HTML.
+                                                                    </p>
+                                                                <p>In HTML 4 and previous versions, the DOCTYPE declaration was more complex and verbose, it
+                                                                    was required to specify the location of the DTD, for example:</p>
+                                                                    <pre>
+                                                                        <code class="language-html" gata-lang="html">
+                                                                        &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+                                                                       </code>
+                                                                    </pre>
+                                                                    <p>The DOCTYPE declaration is important because it tells the browser how to handle the document.
+                                                                        If the DOCTYPE declaration is missing or incorrect, the browser may not be able to properly
+                                                                        display the page, or may display it in quirks mode, which means that the browser will use a
+                                                                        different set of rules to display the page, and it may not look or behave as intended.</p>
+                                                                    <p>It's important to note that the DOCTYPE declaration is case-insensitive, it can be written in
+                                                                        uppercase or lowercase.</p>
+                                    
+                                                            
+                                                            
+                                                            </p>
+                                    
+                                        </div>
+                                    </section>
+        <!--================End Topic Area =================-->
+
+        <footer class="forum_footer_area" id="sam">
+            <div class="container" >
+                <div class="forum_footer_inner">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <aside class="f_widget ab_wd">
+                                <a href="#"><img src="data:image/jpeg;base64,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" height="150px" alt=""></a>
+                                <select class="nice_select">
+                                    <option value="1">English</option>
+                                    <option value="2">Bengali</option>
+                                    <option value="3">Euro</option>
+                                    <option value="4">Ind</option>
+                                </select>
+                            </aside>
+                        </div>
+                        
+                        <div class="col-lg-3 col-xl-6" >
+                            <aside class="f_widget f_link_wd">
+                                <ul class="navbar-nav" >
+                                    <li><a href="#"><h4 style="color:lightcoral">About</h4></a></li>
+                                    <p style="color:blue">Habib It Solutions Pvt Ltd. was founded in 2018 with the goal of providing a Software Development and Web Application Development company with knowledgeable IT consultants who can deliver valuable business solutions. We assist you and your company in connecting with customers, integrating with vendors, and empowering staff to perform at their best.</p>
+                                    <li><a href="#">Privacy and Policy</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                </ul>
+                            </aside>
+                        </div>
+                        
+                        <div class="col-lg-3 col-sm-6">
+                            <aside class="f_widget f_link_wd">
+                                <ul class="navbar-nav">
+                                    
+                                    <li><a href="#"><h4 style="color:lightcoral">Address </h4></a></li>
+                                    <p style="color:blue">6th Floor, Omega-C Block, Divyasree Building, Hitech City Rd, Kondapur, Telangana 500081</p>
+                                    <li><a href="#">Cookies</a></li>
+                                  </ul>
+                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWYBDw8tqE9XqVaoc1MNPb0uoHB-bpz0MaRA&usqp=CAU" height="30px" width="30px">
+                                  <img src="data:image/png;base64,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" height="30px" width="30px">  
+                                  <img src="data:image/png;base64,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"height="30px" width="30px">
+                                  <img src="data:image/jpeg;base64,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" height="35px" width="35px">
+                                  <img src="data:image/png;base64,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" height="30px" width="30px">
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- How can we help? Form Modal -->
+    <div class="modal fade img_modal" id="exampleModal3" tabindex="-3" role="dialog" aria-hidden="false">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class=" icon_close"></i>
+        </button>
+        <div class="modal-dialog help_form" role="document">
+            <div class="modal-content">
+                <div class="shortcode_title">
+                    <h2>How can we help?</h2>
+                    <p>A premium WordPress theme with integrated Knowledge Base,<br>providing 24/7 community based support.</p>
+                </div>
+                <form action="#" class="contact_form">
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <textarea name="Message" id="massage" placeholder="Massage"></textarea>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <button type="submit" class="btn action_btn">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a id="back-to-top" title="Back to Top"></a>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="assets/bootstrap/js/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="js/pre-loader.js"></script>
+    <script src="js/jquery.parallax-scroll.js"></script>
+    <script src="assets/niceselectpicker/jquery.nice-select.min.js"></script>
+    <script src="assets/wow/wow.min.js"></script>
+    <script src="assets/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/font-size/js/rv-jquery-fontsize-2.0.3.min.js"></script>
+    <script src="js/anchor.js"></script>
+    <script src="assets/prism/prism.js"></script>
+    <script src="assets/magnify-pop/jquery.magnific-popup.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="js/main.js"></script>
+    
+
+</body>
+
+</html>
